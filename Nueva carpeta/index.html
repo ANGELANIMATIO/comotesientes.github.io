@@ -1,0 +1,200 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>como te sientes hoy mi niña?</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Estados de Ánimo</h2>
+        <ul>
+            <li><a href="#" onclick="showCard('feliz')">Feliz</a></li>
+            <li><a href="#" onclick="showCard('triste')">Triste</a></li>
+            <li><a href="#" onclick="showCard('ansiosa')">Ansiosa</a></li>
+            <li><a href="#" onclick="showCard('enojada')">Enojada</a></li>
+            <li><a href="#" onclick="showCard('insegura')">Insegura</a></li>
+            <li><a href="#" onclick="showCard('cansada')">Cansada</a></li>
+            <li><a href="#" onclick="showCard('desesperada')">Desesperada</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Como te sientes hoy mi niña?</h1>
+        <div class="card" id="card">
+            <p id="card-text">Selecciona un estado de ánimo para ver la carta.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    display: flex;
+    transition: background-color 0.5s;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #00796b;
+    padding: 20px;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    transition: width 0.3s;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+h1 {
+    text-align: center;
+    color: #004d40;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    transition: color 0.5s;
+}
+
+.card {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+#card-text {
+    font-size: 1.5em;
+    text-align: center;
+    color: #555;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+</style>
+
+<script>
+    function showCard(emotion) {
+        const cardText = document.getElementById('card-text');
+        let message = '';
+    
+        switch (emotion) {
+            case 'feliz':
+                message = `Mi niña,  
+    Hoy el mundo brilla un poco más porque sé que estás feliz. Me imagino tu sonrisa iluminándolo todo, tu risa llenando el aire como una melodía perfecta. No hay nada más bonito que saber que, en este momento, tu corazón late ligero, sin preocupaciones, sintiendo que todo está bien.  
+    Quiero que atesores esta felicidad, que la guardes en tu pecho como un recuerdo cálido para los días en que las nubes intenten opacar tu luz. Y cuando vuelvas a reír, cuando sientas esa chispa en el alma, recuerda que yo estoy aquí, celebrándote, sintiéndome afortunado de compartir este pequeño instante de alegría contigo.  
+    Disfrútalo, vívelo, porque te lo mereces más que nadie.  
+    Con todo el cariño del mundo,  
+    tu nanito.`;
+                break;
+            case 'triste':
+                message = `Mi niña,  
+    Sé que hoy tu corazón pesa más de lo normal, que hay una sombra en tu mirada y que, aunque el mundo sigue su curso, dentro de ti algo se ha detenido. Ojalá pudiera estar ahí, sosteniéndote, dándote un abrazo que dure lo que necesites.  
+    No voy a decirte que todo estará bien de inmediato, porque sé que a veces las heridas tardan en cerrar. Pero quiero que recuerdes esto: incluso en los días más oscuros, sigues siendo la misma persona increíble que admiro. No importa cuánto duela ahora, esta tristeza no define quién eres ni cuánto vales.  
+    Permítete sentir, llorar si es necesario, pero no te olvides de ti misma. Aquí estoy, como siempre, para recordarte que no estás sola, que tu luz sigue ahí, incluso si hoy no la ves.  
+    Con todo mi cariño,  
+    tu niño.`;
+                break;
+            case 'enojada':
+                message = `Mi niña,  
+    Sé que el fuego dentro de ti arde fuerte ahora, que las palabras y los pensamientos se vuelven un torbellino de frustración. El enojo puede ser pesado, incluso un aliado traicionero que nubla la vista y te hace sentir como si todo estuviera fuera de lugar.  
+    Pero, mi niña, lo que siento por ti es más grande que cualquier rabia. No dejes que esta ira controle tu alma. Tómate un momento, respira, y recuerda que lo que te rodea no merece robarte tu paz. El enojo es válido, es humano, pero no dejes que se quede en ti demasiado tiempo.  
+    Eres más fuerte que este momento, y siempre saldrás adelante, como lo haces con cada tormenta que se cruza. Solo recuerda que siempre hay un camino más tranquilo si decides caminar hacia él.  
+    Con todo mi apoyo,  
+    tu nanito.`;
+                break;
+            case 'ansiosa':
+                message = `Mi niña,  
+    Sé que tu mente está en constante movimiento, atrapada en pensamientos que no parecen detenerse. La ansiedad puede sentirse como una tormenta en tu pecho, como si el peso del mundo fuera tuyo. Y sé que en esos momentos te preguntas si podrás seguir, si todo se resolverá.  
+    Pero quiero que sepas que está bien no tener todas las respuestas ahora. La vida a veces nos exige paciencia, y no hay mal en tomarse un respiro. Todo lo que estás sintiendo es válido, pero no dejes que te consuma. Respira profundo, siente el aire entrando y saliendo de tus pulmones, y recuérdate a ti misma que esto también pasará.  
+    Lo importante es que aquí estoy, siempre para ti, y no tienes que enfrentarlo sola. Nos tomaremos las cosas con calma, un paso a la vez, como siempre lo hemos hecho.  
+    Con cariño y paz,  
+    tu piojosito.`;
+                break;
+            case 'insegura':
+                message = `Mi niña,  
+    Sé que hoy te sientes perdida en tus dudas, como si no pudieras encontrar el camino claro entre tus pensamientos. La inseguridad te envuelve, haciéndote cuestionar cada paso, cada decisión. Pero quiero que recuerdes algo muy importante: no importa cuán incierto se vea el futuro, tú tienes la fuerza para seguir adelante.  
+    No te defines por esos momentos de duda. Todos pasamos por ellos, pero no son lo que somos en esencia. Tienes una luz dentro de ti que no puede ser opacada por la incertidumbre. Y, aunque a veces no lo veas, esa luz es lo que más brilla en los momentos oscuros.  
+    Confía en ti misma, porque yo lo hago. Y cuando no tengas fuerzas para creer en ti, recuerda que yo siempre lo haré por ti.  
+    Con todo mi apoyo,  
+    tu piojosito.`;
+                break;
+            case 'cansada':
+                message = `Mi niña,  
+    Sé que estás agotada, que cada parte de ti grita por un descanso. La vida puede ser demandante y a veces sentimos que hemos dado todo y más, sin dejar espacio para nosotros mismos. Pero quiero que sepas que está bien descansar.  
+    No eres menos por sentirte cansada, ni más débil por necesitar un respiro. Todos tenemos límites, y reconocerlos es una muestra de fortaleza, no de debilidad. Así que tómate el tiempo que necesites para sanar, para recargar tus energías, para volver a ser tú misma.  
+    Y cuando lo hagas, recuerda que estoy aquí, esperando a que regreses más fuerte, con la misma luz que siempre has tenido, solo que ahora un poco más tranquila.  
+    Con todo mi cariño,  
+    tu nanito`;
+                break;
+            case 'desesperada':
+                message = `Mi niña,  
+    Sé que te sientes al borde, como si todo estuviera desmoronándose a tu alrededor. La desesperación puede ser un peso tan grande que te hace dudar de todo. Pero quiero que sepas que no estás sola en esto. Yo estoy aquí, como siempre, y aunque todo se vea incierto, este momento también pasará.  
+    Es normal sentirse así cuando las cosas no salen como esperábamos. Respira. Esto no define quién eres ni lo que eres capaz de hacer. Las tormentas también tienen su fin, y después de ellas, siempre hay calma.  
+    No te olvides de ti misma, mi niña, y recuerda que las sombras no duran para siempre.  
+    Con todo mi cariño ,  
+    tu nanito.`;
+                break;
+            default:
+                message = 'Selecciona un estado de ánimo para ver la carta.';
+        }
+    
+        cardText.textContent = message;
+        document.getElementById('card').style.display = 'block';
+    }
+    </script>
+    
